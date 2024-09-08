@@ -48,9 +48,10 @@ def index():
 
         processed_images = [os.path.join(output_dir, f) for f in os.listdir(output_dir)]
 
-        print(processed_images)
+        app.logger.info('processed image: {0}'.format(processed_images))
 
         if len(processed_images) == 1:
+            app.logger.info('processed only 1 image: {0}'.format(processed_images[0]))
             return render_template('result.html', image=processed_images[0], is_multiple=False)
         else:
             zip_filename = f"{unique_id}.zip"
