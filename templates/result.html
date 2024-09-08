@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Result</title>
+</head>
+<body>
+    <h1>Processing Result</h1>
+
+    {% if is_multiple %}
+        <p>Multiple images have been processed.</p>
+        <a href="{{ zip_file }}">Download Processed Images (ZIP)</a>
+    {% else %}
+        <p>The image has been processed. {{ url_for('uploaded_file', filename=image.split('/')[-1]) }} </p>
+
+        <img src="{{ url_for('uploaded_file', filename=image.split('/')[-1]) }}" alt="Processed Image">
+    {% endif %}
+
+    <br>
+    <a href="/">Return to Upload Page</a>
+</body>
+</html>
