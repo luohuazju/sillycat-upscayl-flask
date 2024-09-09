@@ -14,7 +14,7 @@
     {% else %}
         <p>The image has been processed. {{ url_for('uploaded_file', filename=image.split('/')[-1]) }} </p>
 
-        <img src="{{ url_for('uploaded_file', filename=image.split('/')[-2])+'/'+image.split('/')[-1]) }}" alt="Processed Image">
+        <img src="{{ url_for('uploaded_file', filename=image.split('/')[-2]+'/'+image.split('/')[-1]) }}" alt="Processed Image">
     {% endif %}
 
     <br>
