@@ -69,6 +69,7 @@ def download_zip(filename):
 
 @app.route('/uploads/<path:filename>')
 def uploaded_file(filename):
+    app.logger.info('system get the file name: {0}'.format(filename))
     return send_file(os.path.join(settings.OUTPUT_FOLDER, filename))
 
 
