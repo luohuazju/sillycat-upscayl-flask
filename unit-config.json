@@ -1,0 +1,23 @@
+{
+    "listeners": {
+        "*:4000": {
+            "pass": "applications/flask_app"
+        }
+    },
+    "applications": {
+        "flask_app": {
+            "type": "python 3.12",
+            "path": "/Users/carl/work/sillycat/sillycat-upscayl-flask",
+            "home": "/Users/carl/work/sillycat/sillycat-upscayl-flask/.venv",
+            "module": "web_app",
+            "callable": "app",
+            "environment": {
+                "PYTHONPATH": "/Users/carl/work/sillycat/sillycat-upscayl-flask",
+                "UPSCAYL_PATH": "/opt/upscayl/bin/upscayl-bin",
+                "MODEL_PATH": "/opt/upscayl/models",
+                "UPLOAD_FOLDER": "/opt/upscayl/inputs",
+                "OUTPUT_FOLDER": "/opt/upscayl/outputs"
+            }
+        }
+    }
+}
